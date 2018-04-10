@@ -2,8 +2,6 @@
 #define FUNKCIJOS_H_INCLUDED
 
 
-
-
 struct studentas
 {
     std::string vardas;
@@ -11,7 +9,6 @@ struct studentas
     float egzoPazymys;
     float galutinisVidurkis;
     float galutinisMediana;
-
 };
 
 
@@ -33,6 +30,16 @@ void nuskaitytiSimta();
 void nuskaitytiTukstanti();
 void nuskaitytiDesimtTukstanciu();
 void nuskaitytiSimtasTukst();
+void nuskaitytiDesimtList();
+void nuskaitytiSimtaList();
+void nuskaitytiTukstantiList();
+void nuskaitytiDesimtTukstanciuList();
+void nuskaitytiSimtasTukstList();
+void nuskaitytiDesimtDeque();
+void nuskaitytiSimtaDeque();
+void nuskaitytiTukstantiDeque();
+void nuskaitytiDesimtTukstanciuDeque();
+void nuskaitytiSimtasTukstDeque();
 void isskirtyti();
 void spausdintiVargSaun();
 

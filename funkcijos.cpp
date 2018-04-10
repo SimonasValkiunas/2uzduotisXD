@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string.h>
 #include <vector>
+#include <list>
+#include <deque>
 #include <numeric>
 #include <iomanip>
 #include <algorithm>
@@ -10,18 +12,21 @@
 #include <stdio.h>
 #include <limits>
 #include <ctime>
+
 #include "funkcijos.h"
 
-std::ofstream outDesimtukas ("desimtukas.txt");
-std::ofstream outSimtukas ("simtukas.txt");
-std::ofstream outTukstantukas ("tukstantukas.txt");
-std::ofstream outDesimtTukst ("desimtTukst.txt");
-std::ofstream outSimtasTukst ("simtasTukst.txt");
+
 
 extern std::vector<int> pazymiai;
 extern std::vector<studentas> s;
 extern std::vector<studentas> vargsiukai;
 extern std::vector<studentas> saunuoliai;
+extern std::list<studentas> l;
+extern std::list<studentas> vargs;
+extern std::list<studentas> saun;
+extern std::deque<studentas> d;
+extern std::deque<studentas> vargsiuk;
+extern std::deque<studentas> saunuol;
 
 
 float vidurkis()
@@ -215,299 +220,7 @@ void nuskaityti()
     }
 }
 
-void nuskaitytiDesimt()
-{
-     std::cout <<"Duomenys is failo desimtukas.txt: " << std::endl;
-    std::ifstream inDesimtukas ("desimtukas.txt");
-    std::string line;
-    std::string ivertinimai;
-    int pazymys;
-    if (inDesimtukas)
-    {
-        while(getline(inDesimtukas,line))
-        {
-            pazymiai.clear();
-            std::istringstream ss(line);
-            studentas *stud = new studentas;
-            ss>>(*stud).pavarde>>(*stud).vardas;
-            getline(ss,ivertinimai);
-            std::istringstream sss(ivertinimai);
-            for (int i=0; i<5; i++)
-            {
-                sss>>pazymys;
-                if (sss.fail() || pazymys <0 || pazymys >=11 ){
-                sss.clear();
-                sss.ignore(10000000, '\n');
-                } else {pazymiai.push_back(pazymys);}
 
-            }
-            sort(pazymiai.begin(),pazymiai.end());
-            sss>>(*stud).egzoPazymys;
-            (*stud).galutinisVidurkis = (float)(vidurkis()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            (*stud).galutinisMediana = (float)(mediana()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            s.push_back(*stud);
-
-        }
-
-
-
-    }
-}
-
-void nuskaitytiSimta()
-{
-    std::cout <<"Duomenys is failo simtukas.txt: " << std::endl;
-    s.clear();
-    std::ifstream inSimtukas ("simtukas.txt");
-    std::string line;
-    std::string ivertinimai;
-    int pazymys;
-    if (inSimtukas)
-    {
-        while(getline(inSimtukas,line))
-        {
-            pazymiai.clear();
-            std::istringstream ss(line);
-            studentas *stud = new studentas;
-            ss>>(*stud).pavarde>>(*stud).vardas;
-            getline(ss,ivertinimai);
-            std::istringstream sss(ivertinimai);
-            for (int i=0; i<5; i++)
-            {
-                sss>>pazymys;
-                if (sss.fail() || pazymys <0 || pazymys >=11 ){
-                sss.clear();
-                sss.ignore(10000000, '\n');
-                } else {pazymiai.push_back(pazymys);}
-
-            }
-            sort(pazymiai.begin(),pazymiai.end());
-            sss>>(*stud).egzoPazymys;
-            (*stud).galutinisVidurkis = (float)(vidurkis()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            (*stud).galutinisMediana = (float)(mediana()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            s.push_back(*stud);
-
-        }
-
-
-
-    }
-}
-void nuskaitytiTukstanti()
-{
-    std::cout <<"Duomenys is failo tukstantukas.txt: " << std::endl;
-    s.clear();
-    std::ifstream inTukstantukas ("tukstantukas.txt");
-    std::string line;
-    std::string ivertinimai;
-    int pazymys;
-    if (inTukstantukas)
-    {
-        while(getline(inTukstantukas,line))
-        {
-            pazymiai.clear();
-            std::istringstream ss(line);
-            studentas *stud = new studentas;
-            ss>>(*stud).pavarde>>(*stud).vardas;
-            getline(ss,ivertinimai);
-            std::istringstream sss(ivertinimai);
-            for (int i=0; i<5; i++)
-            {
-                sss>>pazymys;
-                if (sss.fail() || pazymys <0 || pazymys >=11 ){
-                sss.clear();
-                sss.ignore(10000000, '\n');
-                } else {pazymiai.push_back(pazymys);}
-
-            }
-            sort(pazymiai.begin(),pazymiai.end());
-            sss>>(*stud).egzoPazymys;
-            (*stud).galutinisVidurkis = (float)(vidurkis()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            (*stud).galutinisMediana = (float)(mediana()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            s.push_back(*stud);
-
-        }
-
-
-
-    }
-}
-void nuskaitytiDesimtTukstanciu()
-{
-    std::cout <<"Duomenys is failo desimtTukst.txt: " << std::endl;
-    s.clear();
-    std::ifstream inDesimtTukst ("desimtTukst.txt");
-    std::string line;
-    std::string ivertinimai;
-    int pazymys;
-    if (inDesimtTukst)
-    {
-        while(getline(inDesimtTukst,line))
-        {
-            pazymiai.clear();
-            std::istringstream ss(line);
-            studentas *stud = new studentas;
-            ss>>(*stud).pavarde>>(*stud).vardas;
-            getline(ss,ivertinimai);
-            std::istringstream sss(ivertinimai);
-            for (int i=0; i<5; i++)
-            {
-                sss>>pazymys;
-                if (sss.fail() || pazymys <0 || pazymys >=11 ){
-                sss.clear();
-                sss.ignore(10000000, '\n');
-                } else {pazymiai.push_back(pazymys);}
-
-            }
-            sort(pazymiai.begin(),pazymiai.end());
-            sss>>(*stud).egzoPazymys;
-            (*stud).galutinisVidurkis = (float)(vidurkis()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            (*stud).galutinisMediana = (float)(mediana()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            s.push_back(*stud);
-
-        }
-
-
-
-    }
-}
-void nuskaitytiSimtasTukst()
-{
-    std::cout <<"Duomenys is failo simtasTukst.txtt: " << std::endl;
-    s.clear();
-    std::ifstream inSimtasTukst ("simtasTukst.txt");
-    std::string line;
-    std::string ivertinimai;
-    int pazymys;
-    if (inSimtasTukst)
-    {
-        while(getline(inSimtasTukst,line))
-        {
-            pazymiai.clear();
-            std::istringstream ss(line);
-            studentas *stud = new studentas;
-            ss>>(*stud).pavarde>>(*stud).vardas;
-            getline(ss,ivertinimai);
-            std::istringstream sss(ivertinimai);
-            for (int i=0; i<5; i++)
-            {
-                sss>>pazymys;
-                if (sss.fail() || pazymys <0 || pazymys >=11 ){
-                sss.clear();
-                sss.ignore(10000000, '\n');
-                } else {pazymiai.push_back(pazymys);}
-
-            }
-            sort(pazymiai.begin(),pazymiai.end());
-            sss>>(*stud).egzoPazymys;
-            (*stud).galutinisVidurkis = (float)(vidurkis()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            (*stud).galutinisMediana = (float)(mediana()*0.4)+(float)(*stud).egzoPazymys*0.6;
-            s.push_back(*stud);
-
-        }
-
-
-
-    }
-}
-
-void generuojamDesimt()
-{
-
-    srand( time(NULL));
-    for (int i=0; i<10; i++)
-    {
-        outDesimtukas<<std::left<<"Vardas"<<std::setw(5)<< i;
-        outDesimtukas<<std::left<<"Pavarde"<<std::setw(5)<<i;
-
-        for (int i=0; i<5; i++)
-        {
-
-            outDesimtukas<<std::left<<std::setw(3)<<rand() % 11-0;
-        }
-
-       outDesimtukas<<std::left<<std::setw(3)<<rand() % 11-0<< std::endl;
-
-
-    }
-
-}
-
-void generuojamSimta()
-{
- for (int i=0; i<100; i++)
-    {
-        outSimtukas<<std::left<<"Vardas"<<std::setw(5)<< i;
-        outSimtukas<<std::left<<"Pavarde"<<std::setw(5)<<i;
-
-        for (int i=0; i<5; i++)
-        {
-
-            outSimtukas<<std::left<<std::setw(3)<<rand() % 11-0;
-        }
-
-       outSimtukas<<std::left<<std::setw(3)<<rand() % 11-0;
-       outSimtukas << " " << std::endl;
-
-    }
-}
-
-  void generuojamTukstanti()
-  {
-        for (int i=0; i<1000; i++)
-    {
-        outTukstantukas<<std::left<<"Vardas"<<std::setw(7)<< i;
-        outTukstantukas<<std::left<<"Pavarde"<<std::setw(7)<<i;
-
-        for (int i=0; i<5; i++)
-        {
-
-            outTukstantukas<<std::left<<std::setw(3)<<rand() % 11-0;
-        }
-
-       outTukstantukas<<std::left<<std::setw(3)<<rand() % 11-0;
-       outTukstantukas << " " << std::endl;
-
-    }
-  }
-
-  void generuojamDesimtTukstanciu ()
-  {
-       for (int i=0; i<10000; i++)
-    {
-        outDesimtTukst<<std::left<<"Vardas"<<std::setw(10)<< i;
-        outDesimtTukst<<std::left<<"Pavarde"<<std::setw(10)<<i;
-
-        for (int i=0; i<5; i++)
-        {
-
-            outDesimtTukst<<std::left<<std::setw(3)<<rand() % 11-0;
-        }
-
-       outDesimtTukst<<std::left<<std::setw(3)<<rand() % 11-0;
-       outDesimtTukst << " " << std::endl;
-
-    }
-  }
-
-void generuojamSimtaTukstanciu()
-{
-    for (int i=0; i<100000; i++)
-    {
-        outSimtasTukst<<std::left<<"Vardas"<<std::setw(10)<< i;
-        outSimtasTukst<<std::left<<"Pavarde"<<std::setw(10)<<i;
-
-        for (int i=0; i<5; i++)
-        {
-
-            outSimtasTukst<<std::left<<std::setw(3)<<rand() % 11-0;
-        }
-
-       outSimtasTukst<<std::left<<std::setw(3)<<rand() % 11-0;
-       outSimtasTukst << " " << std::endl;
-
-    }
-}
 
 
 void isskirtyti ()
@@ -532,7 +245,6 @@ void spausdintiVargSaun()
     {
         std::cout<<std::left<<std::setw(15)<<vargsiukai[i].pavarde;
         std::cout<<std::left<<std::setw(15)<<vargsiukai[i].vardas;
-        std::cout<<std::left<<std::setw(20)<<std::setprecision(3)<<vargsiukai[i].galutinisMediana;
         std::cout<<std::setprecision(3)<<vargsiukai[i].galutinisVidurkis<<std::endl;
     }
     std::cout << "SAUNUOLIAI:"<< std::endl;
@@ -541,7 +253,9 @@ void spausdintiVargSaun()
     {
         std::cout<<std::left<<std::setw(15)<<saunuoliai[i].pavarde;
         std::cout<<std::left<<std::setw(15)<<saunuoliai[i].vardas;
-        std::cout<<std::left<<std::setw(20)<<std::setprecision(3)<<saunuoliai[i].galutinisMediana;
         std::cout<<std::setprecision(3)<<saunuoliai[i].galutinisVidurkis<<std::endl;
     }
 }
+
+
+
