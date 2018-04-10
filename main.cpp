@@ -1,34 +1,30 @@
 #include <iostream>
-#include <string.h>
 #include <vector>
-#include <numeric>
-#include <iomanip>
-#include <algorithm>
-#include <cmath>
-#include <fstream>
-#include <sstream>
-#include <limits>
-#include <stdio.h>
-#include "funk.h"
+#include <time.h>
+#include "funkcijos.h"
 
 
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
-using std::vector;
-using std::fstream;
-
-vector<int> pazymiai;
-vector<studentas> s;
-
+std::vector<int> pazymiai;
+std::vector<studentas> s;
+std::vector<studentas> vargsiukai;
+std::vector<studentas> saunuoliai;
 
 int main()
-
 {
-   menu();
+    clock_t t1, t2;
+    t1 = clock();
+    generuojamSimta();
+    nuskaitytiSimta();
+    spausdinti();
+    isskirtyti();
+    spausdintiVargSaun();
+    t2 = clock();
+
+    float laikas = (float)t2-(float)t1;
+    laikas = laikas / CLOCKS_PER_SEC;
+    std::cout << laikas << " - sekundziu"<< std::endl;
+
+
+
     return 0;
 }
-
-
-
