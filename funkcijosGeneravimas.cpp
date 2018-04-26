@@ -31,10 +31,11 @@ void generuojamDesimt()
         }
 
        outDesimtukas<<std::left<<std::setw(3)<<rand() % 11-0<< std::endl;
+       outDesimtTukst <<" "<<std::endl;
 
 
     }
-
+    outDesimtukas.close();
 }
 
 void generuojamSimta()
@@ -54,6 +55,7 @@ void generuojamSimta()
        outSimtukas << " " << std::endl;
 
     }
+     outSimtukas.close();
 }
 
   void generuojamTukstanti()
@@ -73,6 +75,7 @@ void generuojamSimta()
        outTukstantukas << " " << std::endl;
 
     }
+    outTukstantukas.close();
   }
 
   void generuojamDesimtTukstanciu ()
@@ -92,6 +95,7 @@ void generuojamSimta()
        outDesimtTukst << " " << std::endl;
 
     }
+    outDesimtTukst.close();
   }
 
 void generuojamSimtaTukstanciu()
@@ -110,5 +114,8 @@ void generuojamSimtaTukstanciu()
        outSimtasTukst<<std::left<<std::setw(3)<<rand() % 11-0;
        outSimtasTukst << " " << std::endl;
 
+
+
     }
+    outSimtasTukst.close();
 }

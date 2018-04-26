@@ -137,6 +137,19 @@ void spausdinti()
     }
 }
 
+void spausdintiDeque()
+{
+    std::cout <<std::left<<std::setw(15)<< "Pavarde" <<std::setw(15)<<"Vardas"<<std::setw(20)<<"Galutinis - mediana"<<std::setw(20)<< "Galutinis - vidurkis"<<std::endl;
+    for (int i=0; i<d.size(); i++)
+    {
+        std::cout<<std::left<<std::setw(15)<<d[i].pavarde;
+        std::cout<<std::left<<std::setw(15)<<d[i].vardas;
+        std::cout<<std::left<<std::setw(20)<<std::setprecision(3)<<d[i].galutinisMediana;
+        std::cout<<std::setprecision(3)<<d[i].galutinisVidurkis<<std::endl;
+    }
+}
+
+
 void rikiuotiStudentus()
 {
 
@@ -220,42 +233,6 @@ void nuskaityti()
     }
 }
 
-
-
-
-void isskirtyti ()
-{
-
-
-    int studsize = s.size();
-    for (int i=0; i<studsize; i++)
-    {
-        if(s[i].galutinisVidurkis < 5.0)
-            {
-                vargsiukai.push_back(s[i]);
-            } else saunuoliai.push_back(s[i]);
-    }
-
-}
-void spausdintiVargSaun()
-{
-    std::cout << "VARGSIUKAI:"<< std::endl;
-    std::cout <<std::left<<std::setw(15)<< "Pavarde" <<std::setw(15)<<"Vardas"<<std::setw(20)<<"Galutinis - mediana"<<std::setw(20)<< "Galutinis - vidurkis"<<std::endl;
-    for (int i=0; i<vargsiukai.size(); i++)
-    {
-        std::cout<<std::left<<std::setw(15)<<vargsiukai[i].pavarde;
-        std::cout<<std::left<<std::setw(15)<<vargsiukai[i].vardas;
-        std::cout<<std::setprecision(3)<<vargsiukai[i].galutinisVidurkis<<std::endl;
-    }
-    std::cout << "SAUNUOLIAI:"<< std::endl;
-    std::cout <<std::left<<std::setw(15)<< "Pavarde" <<std::setw(15)<<"Vardas"<<std::setw(20)<<"Galutinis - mediana"<<std::setw(20)<< "Galutinis - vidurkis"<<std::endl;
-    for (int i=0; i<saunuoliai.size(); i++)
-    {
-        std::cout<<std::left<<std::setw(15)<<saunuoliai[i].pavarde;
-        std::cout<<std::left<<std::setw(15)<<saunuoliai[i].vardas;
-        std::cout<<std::setprecision(3)<<saunuoliai[i].galutinisVidurkis<<std::endl;
-    }
-}
 
 
 

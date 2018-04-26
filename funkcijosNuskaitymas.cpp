@@ -217,7 +217,7 @@ void nuskaitytiDesimtList()
         {
             pazymiai.clear();
             std::istringstream ss(line);
-            studentas *stud = new studentas;
+            auto stud = new studentas;
             ss>>(*stud).pavarde>>(*stud).vardas;
             getline(ss,ivertinimai);
             std::istringstream sss(ivertinimai);
@@ -238,6 +238,7 @@ void nuskaitytiDesimtList()
 
         }
     }
+
 }
 void nuskaitytiDesimtDeque()
 {
@@ -252,7 +253,7 @@ void nuskaitytiDesimtDeque()
         {
             pazymiai.clear();
             std::istringstream ss(line);
-            studentas *stud = new studentas;
+            auto stud = new studentas;
             ss>>(*stud).pavarde>>(*stud).vardas;
             getline(ss,ivertinimai);
             std::istringstream sss(ivertinimai);
@@ -288,7 +289,7 @@ void nuskaitytiSimtaList()
         {
             pazymiai.clear();
             std::istringstream ss(line);
-            studentas *stud = new studentas;
+            auto stud = new studentas;
             ss>>(*stud).pavarde>>(*stud).vardas;
             getline(ss,ivertinimai);
             std::istringstream sss(ivertinimai);
@@ -312,7 +313,7 @@ void nuskaitytiSimtaList()
 void nuskaitytiTukstantiList()
 {
     std::cout <<"Duomenys is failo tukstantukas.txt: " << std::endl;
-    s.clear();
+    l.clear();
     std::ifstream inTukstantukas ("tukstantukas.txt");
     std::string line;
     std::string ivertinimai;
@@ -359,7 +360,7 @@ void nuskaitytiDesimtTukstanciuList()
         {
             pazymiai.clear();
             std::istringstream ss(line);
-            studentas *stud = new studentas;
+            auto stud = new studentas;
             ss>>(*stud).pavarde>>(*stud).vardas;
             getline(ss,ivertinimai);
             std::istringstream sss(ivertinimai);
@@ -395,7 +396,7 @@ void nuskaitytiSimtasTukstList()
         {
             pazymiai.clear();
             std::istringstream ss(line);
-            studentas *stud = new studentas;
+            auto stud = new studentas;
             ss>>(*stud).pavarde>>(*stud).vardas;
             getline(ss,ivertinimai);
             std::istringstream sss(ivertinimai);
@@ -431,7 +432,7 @@ void nuskaitytiSimtaDeque()
         {
             pazymiai.clear();
             std::istringstream ss(line);
-            studentas *stud = new studentas;
+            auto stud = new studentas;
             ss>>(*stud).pavarde>>(*stud).vardas;
             getline(ss,ivertinimai);
             std::istringstream sss(ivertinimai);
@@ -466,7 +467,7 @@ void nuskaitytiTukstantiDeque()
         {
             pazymiai.clear();
             std::istringstream ss(line);
-            studentas *stud = new studentas;
+            auto stud = new studentas;
             ss>>(*stud).pavarde>>(*stud).vardas;
             getline(ss,ivertinimai);
             std::istringstream sss(ivertinimai);
@@ -501,7 +502,7 @@ void nuskaitytiDesimtTukstanciuDeque()
         {
             pazymiai.clear();
             std::istringstream ss(line);
-            studentas *stud = new studentas;
+            auto stud = new studentas;
             ss>>(*stud).pavarde>>(*stud).vardas;
             getline(ss,ivertinimai);
             std::istringstream sss(ivertinimai);
@@ -537,7 +538,7 @@ void nuskaitytiSimtasTukstDeque()
         {
             pazymiai.clear();
             std::istringstream ss(line);
-            studentas *stud = new studentas;
+            auto stud = new studentas;
             ss>>(*stud).pavarde>>(*stud).vardas;
             getline(ss,ivertinimai);
             std::istringstream sss(ivertinimai);

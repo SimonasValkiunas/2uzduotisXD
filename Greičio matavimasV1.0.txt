@@ -1,0 +1,27 @@
+Naudojant antra strategija:
+
+**** Naudojant Vector ****
+
+Nuskaitymas ir suskirstymas su 10 studentu - 0 sekundiu
+Nuskaitymas ir suskirstymas su 100 studentu - 0 sekundiu
+Nuskaitymas ir suskirstymas su 1000 studentu - 0.046 sekundiu
+Nuskaitymas ir suskirstymas su 10000 studentu - 0.734 sekundiu
+Nuskaitymas ir suskirstymas su 100000 studentu - 53.561 sekundiu
+
+**** Naudojant List ****
+
+Nuskaitymas ir suskirstymas su 10 studentu - 0 sekundiu
+Nuskaitymas ir suskirstymas su 100 studentu - 0 sekundiu
+Nuskaitymas ir suskirstymas su 1000 studentu - 0.03 sekundiu
+Nuskaitymas ir suskirstymas su 10000 studentu - 0.312 sekundiu
+Nuskaitymas ir suskirstymas su 100000 studentu - 3.174 sekundiu
+
+**** Naudojant Deque ****
+
+Nuskaitymas ir suskirstymas su 10 studentu - 0 sekundiu
+Nuskaitymas ir suskirstymas su 100 studentu - 0 sekundiu
+Nuskaitymas ir suskirstymas su 1000 studentu - 0.032 sekundiu
+Nuskaitymas ir suskirstymas su 10000 studentu - 0.301 sekundiu
+Nuskaitymas ir suskirstymas su 100000 studentu - 3.25 sekundiu
+
+
